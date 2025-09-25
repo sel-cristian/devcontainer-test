@@ -3,7 +3,7 @@ set -e
 
 # Variables del feature
 INSTALL_NODE="${INSTALL_NODE:-true}"
-GEMINI_VERSION="${VERSION:-latest}"
+BMAD_VERSION="${VERSION:-latest}"
 
 echo "🔍 Checking Node.js installation..."
 
@@ -22,12 +22,12 @@ else
     echo "✅ Node.js detected: $(node -v)"
 fi
 
-echo "📦 Installing Gemini CLI and BMAD METHOD..."
-if [ "$GEMINI_VERSION" = "latest" ]; then
-    npm install -g @google/gemini-cli bmad-method
+echo "📦 Installing BMAD METHOD..."
+if [ "$BMAD_VERSION" = "latest" ]; then
+    npm install -g bmad-method
 else
-    npm install -g @google/gemini-cli@"$GEMINI_VERSION" bmad-method
+    npm install -g bmad-method@"$BMAD_VERSION"
 fi
 
 echo "✅ Installation complete!"
-echo "👉 Run 'gemini' or 'bmad' inside the container."
+echo "👉 Run 'bmad' inside the container."

@@ -1,0 +1,14 @@
+{
+  "id": "gemini-bmad",
+  "version": "1.0.0",
+  "name": "Gemini CLI + BMAD METHOD",
+  "documentationURL": "https://github.com/google-gemini/gemini-cli",
+  "description": "Installs @google/gemini-cli and bmad-method globally with Node.js v20+. Ensures compatibility even if Node.js is missing.",
+  "options": {
+    "installNode": {
+      "type": "boolean",
+      "default": true,
+      "description": "Install/upgrade Node.js to v20 if not already present."
+    }
+  }
+}

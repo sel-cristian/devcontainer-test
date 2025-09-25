@@ -6,7 +6,7 @@ echo "Activating feature 'GEMINI-CLI'"
 VERSION="${VERSION:-latest}"
 SET_API_KEY_ENV="${SETAPIKEYENV:-true}"
 
-# Ensure Node.js and npm are installed
+# Instalar Node.js si no existe
 if ! command -v npm >/dev/null 2>&1; then
     echo "🔹 Installing Node.js and npm..."
     apt-get update
@@ -29,4 +29,5 @@ else
     echo "ℹ️ No GEMINI_API_KEY provided. Authenticate with 'gemini auth login'."
 fi
 
-echo "✅ Gemini CLI installation comple
+echo "✅ Gemini CLI installation complete"
+gemini --version || true

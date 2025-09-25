@@ -1,0 +1,19 @@
+{
+  "id": "gemini-cli",
+  "version": "1.0.0",
+  "name": "Google Gemini CLI",
+  "description": "Installs the official Google Gemini CLI for interacting with Gemini models.",
+  "documentationURL": "https://github.com/google-gemini/gemini-cli",
+  "options": {
+    "version": {
+      "type": "string",
+      "default": "latest",
+      "description": "Gemini CLI version to install"
+    },
+    "setApiKeyEnv": {
+      "type": "boolean",
+      "default": true,
+      "description": "Expose GEMINI_API_KEY in the container environment if provided by user"
+    }
+  }
+}

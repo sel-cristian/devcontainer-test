@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -e
+
+echo "Activating feature 'GEMINI-CLI'"
+
+VERSION="${VERSION:-latest}"
+SET_API_KEY_ENV="${SETAPIKEYENV:-true}"
+
+echo "🔹 Installing Gemini CLI (version: $VERSION)"
+
+if [ "$VERSION" = "latest" ]; then
+    npm install -g @google/gemini-cli
+else
+    npm install -g @google/gemini-cli@"$VERSION"
+fi
+
+if [ "$SET_API_KEY_ENV" = "true" ] && [ -n "$GEMINI_API_KEY" ]; then
+    echo "export GEMINI_API_KEY=${GEMINI_API_KEY}" >> /etc/profile.d/gemini-cli.sh
+    echo "✅ GEMINI_API_KEY configured in container"
+else
+    echo "ℹ️ No GEMINI_API_KEY provided. Authenticate with 'gemini auth login'."
+fi
+
+echo "✅ Gemini CLI installation complete"
+gemini --version || true
